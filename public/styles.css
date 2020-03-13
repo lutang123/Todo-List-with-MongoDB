@@ -116,9 +116,7 @@ footer {
   margin-top: 50px
 }
 
-@media () {
-  .box {
-    max-width: 1028px
+@media (max-width: 1028px) {
+  .box  
     text-align: center;
-  }
 }
