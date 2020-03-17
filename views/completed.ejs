@@ -1,0 +1,32 @@
+<%- include("header") -%>
+
+  <div class="box" id="heading">
+    <h1> <%= listTitle %></<h1>
+    <P class="completedP">You have completed your ToDo list today!" </P>
+  </div>
+
+  <div class="box">
+    <% deletedItems.forEach(function(item) { %>
+      <div class="item">
+        <!-- // this onchange is to make the checkbox in input get submitted to the form. -->
+        <p class="deletedItem"><%=item.name%></p>
+      </div>
+    <% }) %>
+  </div>
+
+  <div class="box goDream">
+    <!-- <form action="/dream" method="post"> -->
+      <h1 class="h1_dream"> Go back to ToDo List <button onclick="location.href='/'" class="goButton" type="button"> → </button></h1>
+  <!-- </form> -->
+  </div>
+
+  <div class="box goDream">
+    <!-- <form action="/dream" method="post"> -->
+      <h1 class="h1_dream"> Go to Dream List <button onclick="location.href='/dream'" class="goButton" type="button"> → </button></h1>
+  <!-- </form> -->
+  </div>
+
+<%- include("footer") -%>
+
+
+<!-- // Now we are able to pass variables from our server to our template file using ejs, in this lesson, we will see how to use EJS to run code inside our template. But remember, JavaScript code should be inside server, only in the case when it is not possible in server or it is easier in .ejs, then we write it in ejs file and every line of code (the one that is not html) should use  // -->

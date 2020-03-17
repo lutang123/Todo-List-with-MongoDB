@@ -15,7 +15,7 @@ h1 {
 }
 
 .box {
-  max-width: 400px;
+  max-width: 450px;
   margin: 50px auto;
   background: white;
   border-radius: 5px;
@@ -54,6 +54,11 @@ input:checked+p {
   text-decoration-color: #A683E3;
 }
 
+.deletedItem {
+  text-decoration: line-through;
+  text-decoration-color: #A683E3;
+}
+
 input[type="checkbox"] {
   margin: 20px;
 }
@@ -64,6 +69,9 @@ p {
   font-size: 20px;
   font-weight: 200;
   color: #00204a;
+}
+.completedP {
+  color: #fff
 }
 
 form {
@@ -81,10 +89,13 @@ button {
   font-size: 30px;
   padding-bottom: 6px;
   border-width: 0;
+  margin-left: 10px;
+  margin-right: 10px
 }
 
 .goButton {
-  margin-left: 0px
+  margin-left: 35px;
+  margin-right: 10px
 }
 
 input[type="text"] {
@@ -117,6 +128,6 @@ footer {
 }
 
 @media (max-width: 1028px) {
-  .box  
+  .box
     text-align: center;
 }
