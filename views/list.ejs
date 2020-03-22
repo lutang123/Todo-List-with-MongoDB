@@ -1,23 +1,25 @@
-<%- include("header") -%>
+<%- include("partials/header") -%>
 
   <div class="box" id="heading">
-    <h1> <%= listTitle %> </h1>
+    <h1> <%=title%> </h1>
   </div>
 
   <div class="box">
+
     <% newListItems.forEach(function(item) { %>
-    <form class="" action="/completed" method="post">
+    <form action="/deleted" method="post">
       <div class="item">
         <input type="checkbox" name="deletedItem" value="<%=item.name%>" onchange="this.form.submit()">
-        <!-- // this onchange is to make the checkbox in input get submitted to the form. -->
         <p><%=item.name%></p>
+        <!-- hidden input is just a way to tap into the value when we submit and post to /deleted -->
+        <input type="hidden" name="hidden" value="<%=title%>"></input>
       </div>
     </form>
     <% }) %>
 
     <form class="item" action="/" method="post">
-      <input type="text" name="newItem" value="" placeholder="New Item" autocomplete="off">
-      <button type="submit" name="button" value=<%= listTitle %>> + </button>
+      <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+      <button type="submit" name="button" value=<%=title%>> + </button>
     </form>
 
   </div>
@@ -30,11 +32,11 @@
 
   <div class="box goDream">
     <!-- <form action="/dream" method="post"> -->
-      <h1 class="h1_dream"> Go to Completed List <button onclick="location.href='/completed'" class="goButton_completed" type="button"> → </button></h1>
+      <h1 class="h1_dream"> Go to Completed List <button onclick="location.href='/deleted'" class="goButton_completed" type="button"> → </button></h1>
   <!-- </form> -->
   </div>
 
-<%- include("footer") -%>
+<%- include("partials/footer") -%>
 
 
 <!-- // Now we are able to pass variables from our server to our template file using ejs, in this lesson, we will see how to use EJS to run code inside our template. But remember, JavaScript code should be inside server, only in the case when it is not possible in server or it is easier in .ejs, then we write it in ejs file and every line of code (the one that is not html) should use  // -->
