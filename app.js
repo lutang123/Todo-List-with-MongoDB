@@ -204,9 +204,12 @@ app.post("/dream", function(req, res) {
 //   })
 // })
 
-// process.env.PORT ||
-app.listen(process.env.PORT || 3000, function() {
-  console.log("server is running on Heroku and port 3000")
+let port = process.env.port
+if (port = null || port == "") {
+  port = 3000
+}
+app.listen(port, function() {
+  console.log("server is running on Heroku or port 3000")
 })
 
 
